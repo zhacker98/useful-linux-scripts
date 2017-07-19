@@ -33,7 +33,7 @@ echo "Checking Zpool Status"
 for i in ${server_list};
   do echo '**********************' >> ${log_file}
   echo >> ${log_file}
-  echo ${i} >> ${log_file}
+  echo "${i} ----****" >> ${log_file}
   echo >> ${log_file}
   echo "Current Time is : $(date +%m-%d-%Y_%H:%M)" >> ${log_file}
   ssh ${i} 'zpool status -x' >> ${log_file}
