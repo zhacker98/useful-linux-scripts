@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# Zpool Status -- Checks the status of zpools on a list of SmartOS/Solaris
+# Zpool Status -- Checks the status of zpools on SmartOS/Solaris Servers
 #
 #   Written by Joel E White
 #              -- 2017
