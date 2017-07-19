@@ -28,7 +28,7 @@ sleep 2
 echo "Checking the Network"
 
 for i in {1..255};
-  do ping -c 1 ${first_octets}.${i}|tail -4|grep -B 1 "1 received" | tee ${log_file}
+  do ping -c 1 ${first_octets}.${i}|tail -4|grep -B 1 "1 received" >> ${log_file}
 done
 
 echo "Check ${working_dir} for todays logfile"
