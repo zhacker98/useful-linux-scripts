@@ -3,6 +3,9 @@
 # A Script to generate the directory structure for new playbooks
 #
 #	Written by Joel E White
+#
+# Directory structure based off of
+# http://docs.ansible.com/ansible/playbooks_best_practices.html
 
 working_dir="/etc/ansible/roles/"
 new_playbook=$1
