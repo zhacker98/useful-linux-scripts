@@ -13,7 +13,7 @@
 TIMESTAMP="$(date +%m-%d-%Y::%H:%M:%S)"
 BASE_DIR="$(pwd)"
 LOG_DIR="${BASE_DIR}/LOGS"
-LOG_FILE="${LOG_DIR}/SENTRY_CONNECTION_LOG"
+LOG_FILE="${LOG_DIR}/CONNECTION_LOG"
 
 CHECK_IP="xxx.xxx.xx.xx"
 
