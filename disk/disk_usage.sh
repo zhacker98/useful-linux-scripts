@@ -10,6 +10,7 @@ base_dir="/root"
 working_dir="${base_dir}/disk_usage"
 log_file="${working_dir}/disk-usage_$(date +%m-%d-%Y)"
 
+# Edit this list with the servers you want to check, either fqdn or IP
 server_list='
 server1
 server2
