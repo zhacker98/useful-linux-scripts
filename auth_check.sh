@@ -30,6 +30,6 @@ touch ${LogFile}
 # MAIN
 for hOst in ${ServerList}
   do echo ">>---- ${hOst} ----<<" | tee -a ${LogFile}
-  ssh -o ${ShhOption1} -o ${SshOption2} -o ${SshOption3} ${hOst} ${CommandsToRun} | tee -a ${LogFile}
+  ssh ${ShhOption1} ${SshOption2} ${SshOption3} ${hOst} ${CommandsToRun} | tee -a ${LogFile}
   echo '<<---- ** ---->>' | tee -a ${LogFile}
 done
