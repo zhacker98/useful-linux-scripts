@@ -8,7 +8,10 @@
 #####
 
 # VAR
+Usage='./script <from> <to> <subject> <body>'
+
 NC=$(which nc)
+
 Date=$(date '+%a, %d %b %Y %H:%M:%S %z')
 From=$1
 To=$2
@@ -37,6 +40,10 @@ HELO ${SMTPserver}
 
 # PRE
 
+if [ $# -ne "4" ]; then
+  echo ${Usage}
+  exit
+fi
 
 # MAIN
 
