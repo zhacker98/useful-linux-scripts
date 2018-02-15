@@ -9,6 +9,7 @@
 #
 #       This Script requires that you have GNU-Screen installed
 #           apt-get install -y -q screen
+#             Adding a -L flag to the command will log output to current working directory as screenlog.*
 #
 #####
 
