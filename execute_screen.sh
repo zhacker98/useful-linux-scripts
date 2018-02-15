@@ -13,7 +13,7 @@
 Usage="./script <screen_name> '<commands_to_run>' "
 ScreenName=$1
 Commands=$2
-Screen=$(which dronecode)
+Screen=$(which screen)
 
 # PRE
 if [ $# -ne "2" ]; then
