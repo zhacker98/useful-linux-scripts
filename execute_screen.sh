@@ -7,6 +7,9 @@
 #
 #   Written by Joel E White @2018
 #
+#       This Script requires that you have GNU-Screen installed
+#           apt-get install -y -q screen
+#
 #####
 
 # VAR
@@ -19,13 +22,6 @@ Screen=$(which screen)
 if [ $# -ne "2" ]; then
   echo ${Usage}
   exit
-fi
-
-if [ ${Screen} -z ]; then
-  echo 'Screen not found'
-  sleep 1
-  echo 'Installing Screen'
-  apt-get install -y -q screen
 fi
 
 # MAIN
