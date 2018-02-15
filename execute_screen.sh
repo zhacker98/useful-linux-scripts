@@ -13,6 +13,7 @@
 Usage="./script <screen_name> '<commands_to_run>' "
 ScreenName=$1
 Commands=$2
+Screen=$(which dronecode)
 
 # PRE
 if [ $# -ne "2" ]; then
@@ -20,6 +21,12 @@ if [ $# -ne "2" ]; then
   exit
 fi
 
-# MAIN
+if [ ${Screen} -z ]; then
+  echo 'Screen not found'
+  sleep 1
+  echo 'Installing Screen'
+  apt-get install -y -q screen
+fi
 
-screen -S ${ScreenName} -dm bash -c "${Commands}"
+# MAIN
+${Screen} -S ${ScreenName} -dm bash -c "${Commands}"
