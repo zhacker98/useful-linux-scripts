@@ -15,7 +15,9 @@
 
 # VAR
 Usage="./script <screen_name> '<commands_to_run>' "
+BaseDir=$(pwd)
 ScreenName=$1
+LogFile="${BaseDir}/${ScreenName}_Session.log"
 Commands=$2
 Screen=$(which screen)
 
@@ -26,4 +28,22 @@ if [ $# -ne "2" ]; then
 fi
 
 # MAIN
-${Screen} -S ${ScreenName} -dm bash -c "${Commands}"
+${Screen} -S ${ScreenName} -L -dm bash -c "${Commands}"
+
+CheckForLog=$(find ${BaseDir} -maxdepth 1 -type f -cmin -1 -name 'screenlog.*')
+
+echo 'Use the following to reattach to your screen session' | tee -a ${LogFile}
+echo "screen -r ${ScreenName}" | tee -a ${LogFile}
+echo | tee -a ${LogFile}
+sleep 1
+
+echo "Log file found is: ${CheckForLog}" | tee -a ${LogFile}
+echo | tee -a ${LogFile}
+sleep 2
+
+echo "Tailing log of ${ScreenName} now" | tee -a ${LogFile}
+echo "tail -f ${CheckForLog}" >> ${LogFile}
+sleep 2
+tail -f ${CheckForLog}
+
+
