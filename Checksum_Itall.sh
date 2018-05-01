@@ -1,5 +1,13 @@
 #! /bin/bash
 
+#######
+#
+#   A Script to check checksums, and generate checksums for those without
+#
+#     Written by Joel E White @2018
+#
+#######
+
 # VAR
 SCAN_DIR="$1"
 EXTEN="$2"
